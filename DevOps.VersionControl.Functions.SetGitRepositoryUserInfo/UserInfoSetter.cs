@@ -1,4 +1,4 @@
-﻿using DevOps.VersionControl.Functions.RunGitConfigCommand.GitConfigCommandRunner;
+﻿using static DevOps.VersionControl.Functions.RunGitConfigCommand.GitConfigCommandRunner;
 
 namespace DevOps.VersionControl.Functions.SetGitRepositoryUserInfo
 {
