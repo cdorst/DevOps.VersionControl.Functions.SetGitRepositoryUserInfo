@@ -10,10 +10,11 @@
     <Description>Helper for setting git repository user config information</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CDorst.DevOps.VersionControl.Functions.SetGitRepositoryUserInfo</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CDorst.Common.Functions.WrapStringInDoubleQuotes" Version="1.0.0" />
     <PackageReference Include="CDorst.DevOps.VersionControl.Functions.RunGitConfigCommand" Version="1.0.0" />
   </ItemGroup>
 

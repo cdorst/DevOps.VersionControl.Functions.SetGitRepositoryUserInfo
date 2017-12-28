@@ -1,4 +1,5 @@
-﻿using static DevOps.VersionControl.Functions.RunGitConfigCommand.GitConfigCommandRunner;
+﻿using static Common.Functions.WrapStringInDoubleQuotes.StringWrapper;
+using static DevOps.VersionControl.Functions.RunGitConfigCommand.GitConfigCommandRunner;
 
 namespace DevOps.VersionControl.Functions.SetGitRepositoryUserInfo
 {
@@ -9,8 +10,17 @@ namespace DevOps.VersionControl.Functions.SetGitRepositoryUserInfo
 
         public static void SetUserInfo(string repositoryDirectory, string username, string email)
         {
-            Config(repositoryDirectory, UserEmail, email);
-            Config(repositoryDirectory, UserName, username);
+            SetEmail(repositoryDirectory, email);
+            SetName(repositoryDirectory, username);
         }
+
+        private static void InvokeGitConfig(string directory, string key, string value)
+            => Config(directory, key, WrapInDoubleQuotes(value));
+
+        private static void SetEmail(string directory, string value)
+            => InvokeGitConfig(directory, UserEmail, value);
+
+        private static void SetName(string directory, string value)
+            => InvokeGitConfig(directory, UserName, value);
     }
 }
